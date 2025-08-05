@@ -1,0 +1,23 @@
+# 忽略构建目录
+build/
+lib/
+bin/
+CMakeFiles/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+install_manifest.txt
+
+# 忽略临时文件
+*.o
+*.so
+*.a
+*.swp
+*.bak
+*.user
+
+# 可执行文件
+c
+cpp
+main
+tips.txt
