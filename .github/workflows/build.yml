@@ -19,16 +19,7 @@ jobs:
 
     - name: Create build directory
       run: |
-        mkdir tmp
         mkdir build
-
-    - name: Build and Install terstys
-      run: |
-        cd tmp
-        cmake -S .. -B . -DCMAKE_INSTALL_PREFIX=$HOME/.local
-        cmake --build tmp
-        make install
-        cd ..
 
     - name: Configure CMake
       run: cmake -S . -B build -DCMAKE_INSTALL_PREFIX=$HOME/.local
