@@ -1,0 +1,30 @@
+name: Build terstys
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up CMake
+      uses: lukka/get-cmake@latest
+
+    - name: Create build directory
+      run: mkdir build
+
+    - name: Configure CMake
+      run: cmake -S . -B build -DCMAKE_INSTALL_PREFIX=$HOME/.local
+
+    - name: Build
+      run: cmake --build build
+
+    - name: Install
+      run: cmake --install build
