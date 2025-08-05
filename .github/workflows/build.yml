@@ -18,7 +18,17 @@ jobs:
       uses: lukka/get-cmake@latest
 
     - name: Create build directory
-      run: mkdir build
+      run: |
+        mkdir tmp
+        mkdir build
+
+    - name: Build and Install terstys
+      run: |
+        cd tmp
+        cmake -S .. -B . -DCMAKE_INSTALL_PREFIX=$HOME/.local
+        cmake --build tmp
+        make install
+        cd ..
 
     - name: Configure CMake
       run: cmake -S . -B build -DCMAKE_INSTALL_PREFIX=$HOME/.local
