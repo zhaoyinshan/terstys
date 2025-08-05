@@ -1,6 +1,5 @@
 #include "terstys.h"
 
-
 static inline void buff_check(char *buffer, size_t buf_size){
     memset(buffer, 0, buf_size);
     assert(buf_size >= 0x10);  
