@@ -25,3 +25,5 @@ else
 fi
 
 build/cpp-example
+
+build/c-example
